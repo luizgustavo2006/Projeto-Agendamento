@@ -12,7 +12,8 @@ public class Especialidade {
 		if (nome.length() >= 3) {
 			this.nome = nome;
 		} else {
-			JOptionPane.showMessageDialog(null, nome + " não é um nome válido! \nDeve conter pelo menos três letras");
+			JOptionPane.showMessageDialog(null, nome + " não é um nome válido! "
+					+ "\nDeve conter pelo menos três letras");
 		}
 
 	}
