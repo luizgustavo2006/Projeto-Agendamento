@@ -8,11 +8,11 @@ public class TesteWrappper {
 
 	public static void main(String[] args) {
 		
-		int a = 5;
-		
-		Integer b = 5;
-		
-		Double x = 2.9;
+//		int a = 5;
+//		
+//		Integer b = 5;
+//		
+//		Double x = 2.9;
 		
 		ArrayList<Especialidade> especialidades = new ArrayList<>();
 		
@@ -65,7 +65,6 @@ public class TesteWrappper {
 		nova.setNome("Não é mais fisio");
 		System.out.println(nova.getNome());
 		
-		Especialidade xy = new 
 		
 		}
 
