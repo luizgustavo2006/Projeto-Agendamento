@@ -3,6 +3,7 @@ package br.senai.sp.jandira.teste;
 import java.util.ArrayList;
 
 import br.senai.sp.jandira.AgendaAPP;
+import br.senai.sp.jandira.dao.EspecialidadeDAO;
 import br.senai.sp.jandira.model.Especialidade;
 import br.senai.sp.jandira.model.PlanoDeSaúde;
 
@@ -21,7 +22,22 @@ public class TesteObjetos {
         e3.setDescricao("Cuida do ouvido");
 
         Especialidade e4 = new Especialidade("Qualquer coisa!");
+        e4.setDescricao("Qualquer coisa só que na descrição");
+        
         Especialidade e5 = new Especialidade("Especialidade5!");
+        
+        EspecialidadeDAO.gravar(e1);
+        EspecialidadeDAO.gravar(e2);
+        
+        
+        System.out.println("TAMANHO ---->" + EspecialidadeDAO.getEspecialidades().size()); 
+        
+        System.out.println(EspecialidadeDAO.getEspecialidades(100).getNome());
+        
+        EspecialidadeDAO.excluir(101);
+        
+        System.out.println(EspecialidadeDAO.getEspecialidades().size());
+
         
         // Exibir a quantidade de especialidades criadas até agora
         System.out.println("TOTAL DE ESPECIALIDADES ---->" + e1.getContador());
