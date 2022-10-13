@@ -8,7 +8,7 @@ import java.awt.Toolkit;
 
 public class FrameHome extends javax.swing.JFrame {
     
-    private especialidadesPanel especialidadesPanel;
+    private EspecialidadesPanel especialidadesPanel;
     
     private final int POS_X = 30;
     private final int POS_Y = 180;
@@ -16,7 +16,7 @@ public class FrameHome extends javax.swing.JFrame {
     private final int ALTURA = 380;
     
     private void initPanels(){
-        especialidadesPanel = new especialidadesPanel();
+        especialidadesPanel = new EspecialidadesPanel();
         especialidadesPanel.setBounds(POS_X, POS_Y, LARGURA, ALTURA);
         tela.add(especialidadesPanel);
     }
