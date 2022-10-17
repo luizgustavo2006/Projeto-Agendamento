@@ -19,6 +19,7 @@ public class FrameHome extends javax.swing.JFrame {
         especialidadesPanel = new EspecialidadesPanel();
         especialidadesPanel.setBounds(POS_X, POS_Y, LARGURA, ALTURA);
         tela.add(especialidadesPanel);
+        especialidadesPanel.setVisible(false);
     }
     
     public FrameHome() {
@@ -99,7 +100,7 @@ public class FrameHome extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("E-mail: lgs_sistemas@gmail.com");
         panelHome.add(jLabel5);
-        jLabel5.setBounds(860, 200, 180, 30);
+        jLabel5.setBounds(830, 200, 210, 30);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Telefone: (11) 4002-8922");
