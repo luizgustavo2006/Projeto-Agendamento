@@ -35,11 +35,11 @@ public class EspecialidadeDAO {
         }
     }
     
-    public static void atualizar(Especialidade correta){
+    public static void atualizar(Especialidade especialidadeAtualizada){
         for(Especialidade e: especialidades){
-            if(correta.getCodigo() == e.getCodigo()){
+            if(especialidadeAtualizada.getCodigo() == e.getCodigo()){
                 int posicao = especialidades.indexOf(e);
-                especialidades.set(posicao, correta);
+                especialidades.set(posicao, especialidadeAtualizada);
             }
         }
     }
