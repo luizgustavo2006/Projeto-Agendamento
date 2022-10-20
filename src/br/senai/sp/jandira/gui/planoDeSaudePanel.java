@@ -1,6 +1,5 @@
 package br.senai.sp.jandira.gui;
 
-import br.senai.sp.jandira.dao.EspecialidadeDAO;
 import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
 import javax.swing.JTable;
 
