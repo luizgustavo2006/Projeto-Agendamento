@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package br.senai.sp.jandira.gui;
 
 import java.awt.Toolkit;
@@ -9,6 +6,7 @@ import java.awt.Toolkit;
 public class FrameHome extends javax.swing.JFrame {
     
     private EspecialidadesPanel especialidadesPanel;
+    private planoDeSaudePanel planoDeSaudePanel;
     
     private final int POS_X = 30;
     private final int POS_Y = 180;
@@ -20,6 +18,12 @@ public class FrameHome extends javax.swing.JFrame {
         especialidadesPanel.setBounds(POS_X, POS_Y, LARGURA, ALTURA);
         tela.add(especialidadesPanel);
         especialidadesPanel.setVisible(false);
+        
+        planoDeSaudePanel = new planoDeSaudePanel();
+        planoDeSaudePanel.setBounds(POS_X, POS_Y, LARGURA, ALTURA);
+        tela.add(planoDeSaudePanel);
+        planoDeSaudePanel.setVisible(false);
+        
     }
     
     public FrameHome() {
@@ -204,6 +208,8 @@ public class FrameHome extends javax.swing.JFrame {
         buttonHome.setBackground(new java.awt.Color(204,255,204));
         panelHome.setVisible(true);
         especialidadesPanel.setVisible(false);
+        planoDeSaudePanel.setVisible(false);
+        buttonPlanoDeSaude.setBackground(new java.awt.Color(255,255,204));
     }//GEN-LAST:event_buttonHomeActionPerformed
 
     private void buttonPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPacienteActionPerformed
@@ -211,7 +217,12 @@ public class FrameHome extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonPacienteActionPerformed
 
     private void buttonPlanoDeSaudeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlanoDeSaudeActionPerformed
-        // TODO add your handling code here:
+        buttonPlanoDeSaude.setBackground(new java.awt.Color(204,255,204));
+        buttonHome.setBackground(new java.awt.Color(255,255,204));
+        panelHome.setVisible(false);
+        especialidadesPanel.setVisible(false);
+        planoDeSaudePanel.setVisible(true);
+        buttonEspecialidade.setBackground(new java.awt.Color(255,255,204));
     }//GEN-LAST:event_buttonPlanoDeSaudeActionPerformed
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
@@ -227,6 +238,8 @@ public class FrameHome extends javax.swing.JFrame {
         buttonHome.setBackground(new java.awt.Color(255,255,204));
         panelHome.setVisible(false);
         especialidadesPanel.setVisible(true);
+        planoDeSaudePanel.setVisible(false);
+        buttonPlanoDeSaude.setBackground(new java.awt.Color(255,255,204));
     }//GEN-LAST:event_buttonEspecialidadeActionPerformed
 
     private void buttonAgenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgenda1ActionPerformed

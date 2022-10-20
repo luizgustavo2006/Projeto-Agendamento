@@ -8,7 +8,7 @@ public class EspecialidadeDAO {
     
     private static ArrayList<Especialidade> especialidades = new ArrayList<>();
     
-    public static ArrayList<Especialidade> getEspecialidades() {
+    public static ArrayList<Especialidade> getEspecialidade() {
         return especialidades;
     }
     

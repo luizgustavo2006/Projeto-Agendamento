@@ -37,7 +37,7 @@ public class EspecialidadesPanel extends javax.swing.JPanel {
         buttonAdicionar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Especialidades\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 1, 14), new java.awt.Color(255, 51, 102))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Especialidades", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 0, 14), new java.awt.Color(255, 0, 102))); // NOI18N
         setPreferredSize(new java.awt.Dimension(1090, 380));
         setLayout(null);
 

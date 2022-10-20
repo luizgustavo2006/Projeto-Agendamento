@@ -10,7 +10,7 @@ public class Paciente {
 	private Endereco endereco;
 	private String rg;
 	private String cpf;
-	private PlanoDeSaúde planoDeSaude;
+	private PlanoDeSaude planoDeSaude;
 	
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -54,10 +54,10 @@ public class Paciente {
 		return cpf;
 	}
 	
-	public void setPlanoDeSaude(PlanoDeSaúde planoDeSaude) {
+	public void setPlanoDeSaude(PlanoDeSaude planoDeSaude) {
 		this.planoDeSaude = planoDeSaude;
 	}
-	public PlanoDeSaúde getPlanoDeSaude() {
+	public PlanoDeSaude getPlanoDeSaude() {
 		return planoDeSaude;
 	}
 	
