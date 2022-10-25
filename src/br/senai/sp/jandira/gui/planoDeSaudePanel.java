@@ -1,9 +1,14 @@
 package br.senai.sp.jandira.gui;
 
 import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
+import br.senai.sp.jandira.model.OperacaoEnum;
+import br.senai.sp.jandira.model.PlanoDeSaude;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 public class planoDeSaudePanel extends javax.swing.JPanel {
+
+    private int linha;
 
     public planoDeSaudePanel() {
         initComponents();
@@ -11,6 +16,17 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
         preencherTabela();
     }
 
+    private int getLinha() {
+        linha = planoTable.getSelectedRow();
+        return linha;
+    }
+    
+     private Integer getCodigo(){
+        String codigoStr = planoTable.getValueAt(getLinha(), 0).toString();
+        Integer codigo = Integer.valueOf(codigoStr);
+        return codigo;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -80,15 +96,62 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApagarActionPerformed
-        // TODO add your handling code here:
+        
+        if (getLinha() != -1) {
+            excluirPlano();
+        } else {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Por favor, selecione a especialidade que você desea excluir",
+                    "Atenção",
+                    JOptionPane.WARNING_MESSAGE);
+
+        }
     }//GEN-LAST:event_buttonApagarActionPerformed
+    private void excluirPlano() {
 
+        int resposta = JOptionPane.showConfirmDialog(
+                this,
+                "Você confirma a exclusão?",
+                "Atenção",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (resposta == 0) {
+            PlanoDeSaudeDAO.excluir(getCodigo());
+            preencherTabela();
+        }
+    }
+    
+    
     private void buttonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdicionarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonAdicionarActionPerformed
+        PlanoDeSaudeDialog planoDialog = 
+                new PlanoDeSaudeDialog(null, true, OperacaoEnum.ADICIONAR);
+        planoDialog.setVisible(true);
+        preencherTabela();
 
+    }//GEN-LAST:event_buttonAdicionarActionPerformed
+    
+    private void editarPlano(){
+        PlanoDeSaude plano = PlanoDeSaudeDAO.getPlanos(getCodigo());
+        
+        PlanoDeSaudeDialog planoDialog = new PlanoDeSaudeDialog(null, true, OperacaoEnum.EDITAR, plano);
+        planoDialog.setVisible(true);
+        preencherTabela();
+    }
+    
+    
     private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
-        // TODO add your handling code here:
+        if(getLinha() != -1){
+           editarPlano();
+       }else{
+           JOptionPane.showMessageDialog(
+                    this,
+                    "Por favor, selecione a especialidade que você desea editar",
+                    "Especialidades",
+                    JOptionPane.WARNING_MESSAGE);
+       }
+        
     }//GEN-LAST:event_buttonEditarActionPerformed
 
 

@@ -180,7 +180,7 @@ public class EspecialidadeDialog extends javax.swing.JDialog {
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         if(operacao == OperacaoEnum.ADICIONAR){
-            adiconar();
+            adicionar();
         }else{
             editar();
         }
@@ -198,7 +198,17 @@ public class EspecialidadeDialog extends javax.swing.JDialog {
         dispose();
     }
     
-    private void adiconar(){
+    private void adicionar(){
+        if(nomeEspecialidadeTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "PorFavor, escreva o nome da especialidade!");
+        }else if(nomeEspecialidadeTextField.getText().length() < 3){
+            JOptionPane.showMessageDialog(null, "Nome da especialidade não é valido!");
+        }else if(descricaoEspecialidadeTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "PorFavor, escreva a descrição da especialidade!");
+        }else if(descricaoEspecialidadeTextField.getText().length() < 10){
+            JOptionPane.showMessageDialog(null, "PorFavor, escreva uma descrição coerente e válida!");
+        }else{
+        
         Especialidade novaEspecialidade = new Especialidade();
         novaEspecialidade.setNome(nomeEspecialidadeTextField.getText());
         novaEspecialidade.setDescricao(descricaoEspecialidadeTextField.getText());
@@ -211,6 +221,7 @@ public class EspecialidadeDialog extends javax.swing.JDialog {
                 JOptionPane.INFORMATION_MESSAGE);
 
         dispose();
+        }
     }
     
     private void nomeEspecialidadeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeEspecialidadeTextFieldActionPerformed

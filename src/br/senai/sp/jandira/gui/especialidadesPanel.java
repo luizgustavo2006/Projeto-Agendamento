@@ -7,10 +7,7 @@ import br.senai.sp.jandira.model.OperacaoEnum;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
-/**
- *
- * @author 22282203
- */
+
 public class EspecialidadesPanel extends javax.swing.JPanel {
 
     private int linha;
