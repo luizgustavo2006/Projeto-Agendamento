@@ -64,6 +64,7 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
         buttonApagar.setBackground(new java.awt.Color(204, 255, 204));
         buttonApagar.setForeground(new java.awt.Color(153, 255, 153));
         buttonApagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/delete32.png"))); // NOI18N
+        buttonApagar.setToolTipText("Excluir Plano");
         buttonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonApagarActionPerformed(evt);
@@ -75,6 +76,7 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
         buttonAdicionar.setBackground(new java.awt.Color(204, 255, 204));
         buttonAdicionar.setForeground(new java.awt.Color(153, 255, 153));
         buttonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/plus32.png"))); // NOI18N
+        buttonAdicionar.setToolTipText("Adicionar Plano");
         buttonAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAdicionarActionPerformed(evt);
@@ -86,6 +88,7 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
         buttonEditar.setBackground(new java.awt.Color(204, 255, 204));
         buttonEditar.setForeground(new java.awt.Color(153, 255, 153));
         buttonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/edit32.png"))); // NOI18N
+        buttonEditar.setToolTipText("Editar Plano");
         buttonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEditarActionPerformed(evt);
