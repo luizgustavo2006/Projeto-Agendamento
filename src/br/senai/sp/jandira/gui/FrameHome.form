@@ -205,6 +205,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/senai/sp/jandira/image/299096_calendar_clock_icon.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Agenda"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAgenda1ActionPerformed"/>
@@ -248,6 +249,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/senai/sp/jandira/image/cartao-medico.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Plano de Saude"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPlanoDeSaudeActionPerformed"/>
@@ -269,6 +271,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/senai/sp/jandira/image/kit-de-primeiros-socorros.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Especialidade"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEspecialidadeActionPerformed"/>
@@ -290,6 +293,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/senai/sp/jandira/image/paciente.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Paciente"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPacienteActionPerformed"/>
@@ -311,6 +315,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/senai/sp/jandira/image/medico.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="M&#xe9;dico"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonMedicoActionPerformed"/>

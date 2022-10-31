@@ -121,6 +121,7 @@ public class FrameHome extends javax.swing.JFrame {
         buttonAgenda1.setBackground(new java.awt.Color(255, 255, 204));
         buttonAgenda1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         buttonAgenda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/299096_calendar_clock_icon.png"))); // NOI18N
+        buttonAgenda1.setToolTipText("Agenda");
         buttonAgenda1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAgenda1ActionPerformed(evt);
@@ -144,6 +145,7 @@ public class FrameHome extends javax.swing.JFrame {
         buttonPlanoDeSaude.setBackground(new java.awt.Color(255, 255, 204));
         buttonPlanoDeSaude.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         buttonPlanoDeSaude.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/cartao-medico.png"))); // NOI18N
+        buttonPlanoDeSaude.setToolTipText("Plano de Saude");
         buttonPlanoDeSaude.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPlanoDeSaudeActionPerformed(evt);
@@ -155,6 +157,7 @@ public class FrameHome extends javax.swing.JFrame {
         buttonEspecialidade.setBackground(new java.awt.Color(255, 255, 204));
         buttonEspecialidade.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         buttonEspecialidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/kit-de-primeiros-socorros.png"))); // NOI18N
+        buttonEspecialidade.setToolTipText("Especialidade");
         buttonEspecialidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEspecialidadeActionPerformed(evt);
@@ -166,6 +169,7 @@ public class FrameHome extends javax.swing.JFrame {
         buttonPaciente.setBackground(new java.awt.Color(255, 255, 204));
         buttonPaciente.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         buttonPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/paciente.png"))); // NOI18N
+        buttonPaciente.setToolTipText("Paciente");
         buttonPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPacienteActionPerformed(evt);
@@ -177,6 +181,7 @@ public class FrameHome extends javax.swing.JFrame {
         buttonMedico.setBackground(new java.awt.Color(255, 255, 204));
         buttonMedico.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         buttonMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/medico.png"))); // NOI18N
+        buttonMedico.setToolTipText("Médico");
         buttonMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMedicoActionPerformed(evt);
@@ -204,12 +209,13 @@ public class FrameHome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHomeActionPerformed
-        buttonEspecialidade.setBackground(new java.awt.Color(255,255,204));
         buttonHome.setBackground(new java.awt.Color(204,255,204));
+        buttonEspecialidade.setBackground(new java.awt.Color(255,255,204));
+        buttonPlanoDeSaude.setBackground(new java.awt.Color(255,255,204));
         panelHome.setVisible(true);
         especialidadesPanel.setVisible(false);
         planoDeSaudePanel.setVisible(false);
-        buttonPlanoDeSaude.setBackground(new java.awt.Color(255,255,204));
+        
     }//GEN-LAST:event_buttonHomeActionPerformed
 
     private void buttonPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPacienteActionPerformed

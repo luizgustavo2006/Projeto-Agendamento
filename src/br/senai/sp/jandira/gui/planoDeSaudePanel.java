@@ -136,7 +136,7 @@ public class planoDeSaudePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_buttonAdicionarActionPerformed
     
     private void editarPlano(){
-        PlanoDeSaude plano = PlanoDeSaudeDAO.getPlanos(getCodigo());
+        PlanoDeSaude plano = PlanoDeSaudeDAO.getPlano(getCodigo());
         
         PlanoDeSaudeDialog planoDialog = new PlanoDeSaudeDialog(null, true, OperacaoEnum.EDITAR, plano);
         planoDialog.setVisible(true);

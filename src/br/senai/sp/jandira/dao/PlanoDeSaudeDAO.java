@@ -11,37 +11,37 @@ public class PlanoDeSaudeDAO {
     private static ArrayList<PlanoDeSaude> planos = new ArrayList<>();
     
     
-    public static ArrayList<PlanoDeSaude> getPlano() {
+    public static ArrayList<PlanoDeSaude> getPlanos() {
         return planos;
     }
     
-    public static PlanoDeSaude getPlanos(Integer codigo) {
-        for(PlanoDeSaude p: planos){
-            if(codigo == p.getCodigo()){
-                return p;
+    public static PlanoDeSaude getPlano(Integer codigo) {
+        for(PlanoDeSaude ps: planos){
+            if(codigo == ps.getCodigo()){
+                return ps;
             }
         }
         
         return null;
     }
 
-    public static void gravar(PlanoDeSaude p){
-        planos.add(p);
+    public static void gravar(PlanoDeSaude ps){
+        planos.add(ps);
     }
     
     public static void excluir(Integer codigo){
-        for(PlanoDeSaude p: planos){
-            if(codigo == p.getCodigo()){
-                planos.remove(p);
+        for(PlanoDeSaude ps: planos){
+            if(codigo == ps.getCodigo()){
+                planos.remove(ps);
                 break;
             }
         }
     }
     
     public static void atualizar(PlanoDeSaude planosAtualizada){
-        for(PlanoDeSaude p: planos){
-            if(planosAtualizada.getCodigo() == p.getCodigo()){
-                int posicao = planos.indexOf(p);
+        for(PlanoDeSaude ps: planos){
+            if(planosAtualizada.getCodigo() == ps.getCodigo()){
+                int posicao = planos.indexOf(ps);
                 planos.set(posicao, planosAtualizada);
             }
         }
@@ -49,15 +49,15 @@ public class PlanoDeSaudeDAO {
  
     
     public static void criarListaDePlanos(){
-        PlanoDeSaude p1 = new PlanoDeSaude("Amil", "561428-87", "Platinum", LocalDate.of(2025, 5, 15));
-        PlanoDeSaude p2 = new PlanoDeSaude("Bradesco", "452326-47", "Bronze", LocalDate.of(2023, 8, 13));
-        PlanoDeSaude p3 = new PlanoDeSaude("NotreDame", "453920-97", "Black", LocalDate.of(2023, 9, 24));
-        PlanoDeSaude p4 = new PlanoDeSaude("Unimed", "426276-46", "Prata", LocalDate.of(2026, 2, 19));
+        PlanoDeSaude ps1 = new PlanoDeSaude("Amil", "561428-87", "Platinum", LocalDate.of(2025, 5, 15));
+        PlanoDeSaude ps2 = new PlanoDeSaude("Bradesco", "452326-47", "Bronze", LocalDate.of(2023, 8, 13));
+        PlanoDeSaude ps3 = new PlanoDeSaude("NotreDame", "453920-97", "Black", LocalDate.of(2023, 9, 24));
+        PlanoDeSaude ps4 = new PlanoDeSaude("Unimed", "426276-46", "Prata", LocalDate.of(2026, 2, 19));
         
-        planos.add(p1);
-        planos.add(p2);
-        planos.add(p3);
-        planos.add(p4);
+        planos.add(ps1);
+        planos.add(ps2);
+        planos.add(ps3);
+        planos.add(ps4);
         
     }
     
@@ -74,14 +74,14 @@ public class PlanoDeSaudeDAO {
         String[][] dados = new String[planos.size()][5];
         
         int i = 0;
-        for (PlanoDeSaude p: planos){
-            dados[i][0] = p.getCodigo().toString();
-            dados[i][1] = p.getOperadora();
-            dados[i][2] = p.getNumero();
-            dados[i][3] = p.getCategoria();
+        for (PlanoDeSaude ps: planos){
+            dados[i][0] = ps.getCodigo().toString();
+            dados[i][1] = ps.getOperadora();
+            dados[i][2] = ps.getNumero();
+            dados[i][3] = ps.getCategoria();
             
             DateTimeFormatter formatacao = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            dados[i][4] = p.getValidade().format(formatacao);
+            dados[i][4] = ps.getValidade().format(formatacao);
             
             
             i++;
