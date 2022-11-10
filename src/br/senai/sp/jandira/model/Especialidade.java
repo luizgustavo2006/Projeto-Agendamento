@@ -1,6 +1,5 @@
 package br.senai.sp.jandira.model;
 
-import javax.swing.JOptionPane;
 
 public class Especialidade {
     
@@ -11,11 +10,10 @@ public class Especialidade {
     
     // Construtores da classe
     public Especialidade() { // Construtor Default/Padrão
-        this.nome = nome;
         gerarCodigo();
     }
     
-    public void gerarCodigo(){
+    private void gerarCodigo(){
         this.contador++;
         this.codigo = contador;
     }
@@ -29,6 +27,18 @@ public class Especialidade {
         this.nome = nome;
         this.descricao = descricao;
         gerarCodigo();
+    }
+    
+    public Especialidade(String nome, String descricao, Integer codigo) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.codigo = codigo;
+        this.contador = codigo;
+    }
+    
+    
+    public String getEspecialidadeSeparaPorPontoEVirgula(){
+        return this.codigo + ";" + this.nome + ";" + this.descricao;
     }
 
     // Métodos de acesso aos atributos

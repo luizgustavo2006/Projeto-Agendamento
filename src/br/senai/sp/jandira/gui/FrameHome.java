@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 public class FrameHome extends javax.swing.JFrame {
     
     private EspecialidadesPanel especialidadesPanel;
-    private planoDeSaudePanel planoDeSaudePanel;
+    private PlanoDeSaudePanel planoDeSaudePanel;
     
     private final int POS_X = 30;
     private final int POS_Y = 180;
@@ -19,7 +19,7 @@ public class FrameHome extends javax.swing.JFrame {
         tela.add(especialidadesPanel);
         especialidadesPanel.setVisible(false);
         
-        planoDeSaudePanel = new planoDeSaudePanel();
+        planoDeSaudePanel = new PlanoDeSaudePanel();
         planoDeSaudePanel.setBounds(POS_X, POS_Y, LARGURA, ALTURA);
         tela.add(planoDeSaudePanel);
         planoDeSaudePanel.setVisible(false);

@@ -6,11 +6,11 @@ import br.senai.sp.jandira.model.PlanoDeSaude;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
-public class planoDeSaudePanel extends javax.swing.JPanel {
+public class PlanoDeSaudePanel extends javax.swing.JPanel {
 
     private int linha;
 
-    public planoDeSaudePanel() {
+    public PlanoDeSaudePanel() {
         initComponents();
         PlanoDeSaudeDAO.criarListaDePlanos();
         preencherTabela();
