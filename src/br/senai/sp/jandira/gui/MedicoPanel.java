@@ -1,51 +1,50 @@
 package br.senai.sp.jandira.gui;
 
-import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
+import br.senai.sp.jandira.dao.MedicoDAO;
+import br.senai.sp.jandira.model.Medico;
 import br.senai.sp.jandira.model.OperacaoEnum;
-import br.senai.sp.jandira.model.PlanoDeSaude;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
-public class PlanoDeSaudePanel extends javax.swing.JPanel {
+public class MedicoPanel extends javax.swing.JPanel {
 
     private int linha;
 
-    public PlanoDeSaudePanel() {
+    public MedicoPanel() {
         initComponents();
-        PlanoDeSaudeDAO.criarListaDePlanos();
+        MedicoDAO.criarListaMedicos();
         preencherTabela();
     }
 
     private int getLinha() {
-        linha = planoTable.getSelectedRow();
+        linha = medicoTable.getSelectedRow();
         return linha;
     }
-    
-    private Integer getCodigo(){
-        String codigoStr = planoTable.getValueAt(getLinha(), 0).toString();
+
+    private Integer getCodigo() {
+        String codigoStr = medicoTable.getValueAt(getLinha(), 0).toString();
         Integer codigo = Integer.valueOf(codigoStr);
         return codigo;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrolPlanoDeSaude = new javax.swing.JScrollPane();
-        planoTable = new javax.swing.JTable();
+        jScrollMedico = new javax.swing.JScrollPane();
+        medicoTable = new javax.swing.JTable();
         buttonApagar = new javax.swing.JButton();
-        buttonAdicionar = new javax.swing.JButton();
         buttonEditar = new javax.swing.JButton();
+        buttonAdicionar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Planos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 0, 14), new java.awt.Color(255, 0, 102))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Médicos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 0, 14), new java.awt.Color(255, 0, 102))); // NOI18N
         setPreferredSize(new java.awt.Dimension(1090, 380));
         setLayout(null);
 
-        jScrolPlanoDeSaude.setMinimumSize(new java.awt.Dimension(60, 30));
-        jScrolPlanoDeSaude.setPreferredSize(new java.awt.Dimension(300, 80));
+        jScrollMedico.setPreferredSize(new java.awt.Dimension(300, 80));
 
-        planoTable.setModel(new javax.swing.table.DefaultTableModel(
+        medicoTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,10 +55,10 @@ public class PlanoDeSaudePanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrolPlanoDeSaude.setViewportView(planoTable);
+        jScrollMedico.setViewportView(medicoTable);
 
-        add(jScrolPlanoDeSaude);
-        jScrolPlanoDeSaude.setBounds(30, 30, 1020, 270);
+        add(jScrollMedico);
+        jScrollMedico.setBounds(30, 30, 1020, 270);
 
         buttonApagar.setBackground(new java.awt.Color(204, 255, 204));
         buttonApagar.setForeground(new java.awt.Color(153, 255, 153));
@@ -73,18 +72,6 @@ public class PlanoDeSaudePanel extends javax.swing.JPanel {
         add(buttonApagar);
         buttonApagar.setBounds(820, 310, 70, 60);
 
-        buttonAdicionar.setBackground(new java.awt.Color(204, 255, 204));
-        buttonAdicionar.setForeground(new java.awt.Color(153, 255, 153));
-        buttonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/plus32.png"))); // NOI18N
-        buttonAdicionar.setToolTipText("Adicionar Plano");
-        buttonAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAdicionarActionPerformed(evt);
-            }
-        });
-        add(buttonAdicionar);
-        buttonAdicionar.setBounds(980, 310, 70, 60);
-
         buttonEditar.setBackground(new java.awt.Color(204, 255, 204));
         buttonEditar.setForeground(new java.awt.Color(153, 255, 153));
         buttonEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/edit32.png"))); // NOI18N
@@ -96,22 +83,34 @@ public class PlanoDeSaudePanel extends javax.swing.JPanel {
         });
         add(buttonEditar);
         buttonEditar.setBounds(900, 310, 70, 60);
+
+        buttonAdicionar.setBackground(new java.awt.Color(204, 255, 204));
+        buttonAdicionar.setForeground(new java.awt.Color(153, 255, 153));
+        buttonAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/image/plus32.png"))); // NOI18N
+        buttonAdicionar.setToolTipText("Adicionar Plano");
+        buttonAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAdicionarActionPerformed(evt);
+            }
+        });
+        add(buttonAdicionar);
+        buttonAdicionar.setBounds(980, 310, 70, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApagarActionPerformed
-        
         if (getLinha() != -1) {
-            excluirPlano();
+            excluirMedico();
         } else {
             JOptionPane.showMessageDialog(
                     this,
-                    "Por favor, selecione o plano que você desea excluir",
+                    "Por favor, selecione o médico que você desea excluir",
                     "Atenção",
                     JOptionPane.WARNING_MESSAGE);
 
         }
+
     }//GEN-LAST:event_buttonApagarActionPerformed
-    private void excluirPlano() {
+    private void excluirMedico() {
 
         int resposta = JOptionPane.showConfirmDialog(
                 this,
@@ -121,53 +120,51 @@ public class PlanoDeSaudePanel extends javax.swing.JPanel {
                 JOptionPane.QUESTION_MESSAGE);
 
         if (resposta == 0) {
-            PlanoDeSaudeDAO.excluir(getCodigo());
+            MedicoDAO.excluir(getCodigo());
             preencherTabela();
         }
     }
-    
-    
+
+    private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
+        if (getLinha() != -1) {
+            editarMedico();
+        } else {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Por favor, selecione o medico que você desea editar",
+                    "Especialidades",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonEditarActionPerformed
+
+    private void editarMedico() {
+        Medico medico = MedicoDAO.getMedicos(getCodigo());
+        MedicoDialog medicoDialog = new MedicoDialog(null, true, OperacaoEnum.EDITAR, medico);
+        medicoDialog.setVisible(true);
+        preencherTabela();
+
+    }
+
     private void buttonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdicionarActionPerformed
-        PlanoDeSaudeDialog planoDialog = 
-                new PlanoDeSaudeDialog(null, true, OperacaoEnum.ADICIONAR);
-        planoDialog.setVisible(true);
+
+        MedicoDialog medicoDialog = new MedicoDialog(null, true, OperacaoEnum.ADICIONAR);
+        medicoDialog.setVisible(true);
         preencherTabela();
 
     }//GEN-LAST:event_buttonAdicionarActionPerformed
-    
-    private void editarPlano(){
-        PlanoDeSaude plano = PlanoDeSaudeDAO.getPlano(getCodigo());
-        
-        PlanoDeSaudeDialog planoDialog = new PlanoDeSaudeDialog(null, true, OperacaoEnum.EDITAR, plano);
-        planoDialog.setVisible(true);
-        preencherTabela();
-    }
-    
-    
-    private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
-        if(getLinha() != -1){
-           editarPlano();
-       }else{
-           JOptionPane.showMessageDialog(
-                    this,
-                    "Por favor, selecione o plano de saude que você deseja editar",
-                    "Plano",
-                    JOptionPane.WARNING_MESSAGE);
-       }
-        
-    }//GEN-LAST:event_buttonEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAdicionar;
     private javax.swing.JButton buttonApagar;
     private javax.swing.JButton buttonEditar;
-    private javax.swing.JScrollPane jScrolPlanoDeSaude;
-    private javax.swing.JTable planoTable;
+    private javax.swing.JScrollPane jScrollMedico;
+    private javax.swing.JTable medicoTable;
     // End of variables declaration//GEN-END:variables
+
     private void preencherTabela() {
 
-        planoTable.setModel(PlanoDeSaudeDAO.getPlanosModel());
+        medicoTable.setModel(MedicoDAO.getMedicosModel());
 
         ajustarTabela();
     }
@@ -175,18 +172,17 @@ public class PlanoDeSaudePanel extends javax.swing.JPanel {
     private void ajustarTabela() {
 
         //Impedir que o úsuario movimente as colunas
-        planoTable.getTableHeader().setReorderingAllowed(false);
+        medicoTable.getTableHeader().setReorderingAllowed(false);
 
         //Bloquear a edição das células da tabela
-        planoTable.setDefaultEditor(Object.class, null);
+        medicoTable.setDefaultEditor(Object.class, null);
 
         //Definir largura das colunas
-        planoTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        planoTable.getColumnModel().getColumn(0).setPreferredWidth(100);
-        planoTable.getColumnModel().getColumn(1).setPreferredWidth(229);
-        planoTable.getColumnModel().getColumn(2).setPreferredWidth(229);
-        planoTable.getColumnModel().getColumn(3).setPreferredWidth(229);
-        planoTable.getColumnModel().getColumn(4).setPreferredWidth(229);
+        medicoTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        medicoTable.getColumnModel().getColumn(0).setPreferredWidth(100);
+        medicoTable.getColumnModel().getColumn(1).setPreferredWidth(305);
+        medicoTable.getColumnModel().getColumn(2).setPreferredWidth(305);
+        medicoTable.getColumnModel().getColumn(3).setPreferredWidth(305);
 
     }
 

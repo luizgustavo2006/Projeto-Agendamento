@@ -45,7 +45,7 @@ public final class Medico {
     }
 
     public String getMedicoSeparadoPorPontoEVirgula() {
-        return this.codigo + ";" + this.crm + ";" + this.nome + ";" + this.telefone + ";" + this.dataDeNascimento;
+        return this.codigo + ";" + this.crm + ";" + this.nome + ";" + this.telefone + ";"+ this.email + ";" + this.dataDeNascimento;
     }
 
     public Integer getCodigo() {

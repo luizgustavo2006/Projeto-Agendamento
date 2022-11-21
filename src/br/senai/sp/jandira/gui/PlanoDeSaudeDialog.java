@@ -75,7 +75,6 @@ public class PlanoDeSaudeDialog extends javax.swing.JDialog {
         buttonSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(818, 545));
         getContentPane().setLayout(null);
 
         panelTitulo.setBackground(new java.awt.Color(0, 204, 204));
@@ -267,13 +266,12 @@ public class PlanoDeSaudeDialog extends javax.swing.JDialog {
         } else if (validadeTextField.getText().length() != 10) {
             JOptionPane.showMessageDialog(null, "PorFavor, confira se está certo a data de validade do plano!");
         } else {
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
             PlanoDeSaude novoPlano = new PlanoDeSaude();
             novoPlano.setOperadora(operadoraTextField.getText());
             novoPlano.setNumero(numeroTextField.getText());
             novoPlano.setCategoria(categoriaTextField.getText());
-            novoPlano.setValidade(LocalDate.parse(validadeTextField.getText(), formato));
+            novoPlano.setValidade(LocalDate.parse(validadeTextField.getText(), formatacao));
 
             PlanoDeSaudeDAO.gravar(novoPlano);
             JOptionPane.showMessageDialog(this,
