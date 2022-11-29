@@ -17,8 +17,8 @@ import javax.swing.table.DefaultTableModel;
 
 public class PlanoDeSaudeDAO {
 
-    private final static String URL = "C:\\Users\\22282203\\JAVA\\Planos.txt";
-    private final static String URL_TEMP = "C:\\Users\\22282203\\JAVA\\Planos-temp.txt";
+    private final static String URL = "C:\\Users\\22282203\\Documents\\JAVA\\Planos.txt";
+    private final static String URL_TEMP = "C:\\Users\\22282203\\Documents\\JAVA\\Planos-temp.txt";
     private final static Path PATH = Paths.get(URL);
     private final static Path PATH_TEMP = Paths.get(URL_TEMP);
 
@@ -37,7 +37,7 @@ public class PlanoDeSaudeDAO {
             escritor.close();
 
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro plano de saude!!");
         }
 
     }
@@ -124,7 +124,7 @@ public class PlanoDeSaudeDAO {
             }
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu algum erro lista de plano de saude!!");
         }
 
     }

@@ -12,14 +12,13 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class MedicoDAO {
 
-    private final static String URL = "C:\\Users\\22282203\\JAVA\\Medicos.txt";
-    private final static String URL_TEMP = "C:\\Users\\22282203\\JAVA\\Medicos-temp.txt";
+    private final static String URL = "C:\\Users\\22282203\\Documents\\JAVA\\Medicos.txt";
+    private final static String URL_TEMP = "C:\\Users\\22282203\\Documents\\JAVA\\Medicos-temp.txt";
     private final static Path PATH = Paths.get(URL);
     private final static Path PATH_TEMP = Paths.get(URL_TEMP);
 
@@ -39,7 +38,7 @@ public class MedicoDAO {
             escritor.close();
 
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro medico !!");
         }
 
     }
@@ -108,7 +107,7 @@ public class MedicoDAO {
             }
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu algum erro lista de medicos!!");
         }
     }
 

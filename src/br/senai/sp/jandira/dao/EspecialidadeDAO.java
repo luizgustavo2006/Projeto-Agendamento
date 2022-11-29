@@ -10,13 +10,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class EspecialidadeDAO {
 
-    private final static String URL = "C:\\Users\\22282203\\JAVA\\Especialidade.txt";
-    private final static String URL_TEMP = "C:\\Users\\22282203\\JAVA\\Especialidade-temp.txt";
+    private final static String URL = "C:\\Users\\22282203\\Documents\\JAVA\\Especialidades.txt";
+    private final static String URL_TEMP = "C:\\Users\\22282203\\Documents\\JAVA\\Especialidade-temp.txt";
     private final static Path PATH = Paths.get(URL);
     private final static Path PATH_TEMP = Paths.get(URL_TEMP);
 
@@ -37,7 +38,7 @@ public class EspecialidadeDAO {
             escritor.close();
 
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro especialidade!!");
         }
     }
 
@@ -124,9 +125,19 @@ public class EspecialidadeDAO {
             }
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro !!");
+            JOptionPane.showMessageDialog(null, "Ocorreu algum erro lista de especialidade!!");
         }
 
+    }
+    
+    public static DefaultListModel<Especialidade> getListaDeEspecialidades() {
+        DefaultListModel<Especialidade> listaDeEspecialidades = new DefaultListModel<>();
+        for (Especialidade i: getEspecialidade()){
+            listaDeEspecialidades.addElement(i);
+            listaDeEspecialidades.toString();
+        }
+        return listaDeEspecialidades;
+        
     }
 
     public static DefaultTableModel getEspecialidadesModel() {
@@ -150,4 +161,5 @@ public class EspecialidadeDAO {
 
         return model;
     }
+    
 }
