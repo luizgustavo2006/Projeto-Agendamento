@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.dao;
 
+import br.senai.sp.jandira.model.Especialidade;
 import br.senai.sp.jandira.model.Medico;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,6 +12,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +24,7 @@ public class MedicoDAO {
     private final static Path PATH_TEMP = Paths.get(URL_TEMP);
 
     private static ArrayList<Medico> medicos = new ArrayList<Medico>();
+    private static ArrayList<Especialidade> especialidades = new ArrayList<Especialidade>();
 
     public static void gravar(Medico m) {
         medicos.add(m);
@@ -99,7 +102,7 @@ public class MedicoDAO {
 
             while (linha != null) {
                 String[] vetor = linha.split(";");
-                Medico m = new Medico(vetor[1], vetor[2], vetor[3], LocalDate.parse(vetor[4]), Integer.valueOf(vetor[0]));
+                Medico m = new Medico(vetor[1], vetor[2], vetor[3], LocalDate.parse(vetor[5]), Integer.valueOf(vetor[0]),vetor[4]);
                 medicos.add(m);
                 linha = leitor.readLine();
             }

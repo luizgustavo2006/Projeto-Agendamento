@@ -34,7 +34,7 @@ public final class Medico {
         this.contador = codigo;
     }
     
-    public Medico(String crm, String nome, String telefone, LocalDate dataDeNascimento ,Integer codigo) {
+    public Medico(String crm, String nome, String telefone, LocalDate dataDeNascimento ,Integer codigo, String email) {
         gerarCodigo();
         this.crm = crm;
         this.nome = nome;
@@ -42,6 +42,7 @@ public final class Medico {
         this.dataDeNascimento = dataDeNascimento;
         this.codigo = codigo;
         this.contador = codigo;
+        this.email = email;
     }
 
     public String getMedicoSeparadoPorPontoEVirgula() {
