@@ -17,9 +17,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class MedicoDAO {
 
-    private final static String URL = "C:\\Users\\22282203\\Documents\\JAVA\\Medicos.txt";
-    private final static String URL_TEMP = "C:\\Users\\22282203\\Documents\\JAVA\\Medicos-temp.txt";
+    private final static String URL = "C:\\Users\\22282203\\JAVA\\Medicos.txt";
+//    private final static String URL = "F:\\JAVA\\Medicos.txt";
     private final static Path PATH = Paths.get(URL);
+    private final static String URL_TEMP = "C:\\Users\\22282203\\JAVA\\Medicos-temp.txt";
+//    private final static String URL_TEMP = "F:\\JAVA\\Medicos-temp.txt";
     private final static Path PATH_TEMP = Paths.get(URL_TEMP);
 
     private static ArrayList<Medico> medicos = new ArrayList<Medico>();
@@ -101,7 +103,7 @@ public class MedicoDAO {
 
             while (linha != null) {
                 String[] vetor = linha.split(";");
-                Medico m = new Medico(vetor[1], vetor[2], vetor[3], LocalDate.parse(vetor[5]), Integer.valueOf(vetor[0]),vetor[4]);
+                Medico m = new Medico(vetor[1], vetor[2], vetor[3], LocalDate.parse(vetor[5]), Integer.valueOf(vetor[0]),vetor[4], codigosSeparadosPorPontoEVirgula(linha));
                 medicos.add(m);
                 linha = leitor.readLine();
             }
@@ -143,6 +145,25 @@ public class MedicoDAO {
         DefaultTableModel model = new DefaultTableModel(dados, titulos);
 
         return model;
+    }
+    
+    public static ArrayList<Especialidade> codigosSeparadosPorPontoEVirgula(String linha) {
+        String[] vetor = linha.split(";");
+
+        int vetorDaEspecialidade = 6;
+
+        ArrayList<Especialidade> codigosDaEspecialidade = new ArrayList<>();
+
+        try {
+            while (vetor.length > vetorDaEspecialidade) {
+                codigosDaEspecialidade.add(EspecialidadeDAO.getEspecialidades(Integer.valueOf(vetor[vetorDaEspecialidade])));
+                vetorDaEspecialidade++;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return codigosDaEspecialidade;
     }
 
 }
